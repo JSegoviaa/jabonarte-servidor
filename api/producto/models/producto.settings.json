@@ -1,0 +1,103 @@
+{
+  "kind": "collectionType",
+  "collectionName": "productos",
+  "info": {
+    "name": "Producto",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "uid",
+      "targetField": "titulo",
+      "required": true
+    },
+    "contenido": {
+      "type": "richtext"
+    },
+    "precio": {
+      "type": "decimal",
+      "required": true
+    },
+    "gramos": {
+      "type": "decimal",
+      "required": false
+    },
+    "cantidad": {
+      "type": "integer",
+      "required": false,
+      "default": 99,
+      "min": 0
+    },
+    "existencia": {
+      "type": "boolean",
+      "required": false,
+      "default": true
+    },
+    "miniatura": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "fotos": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "precio2": {
+      "type": "decimal"
+    },
+    "gramos2": {
+      "type": "decimal"
+    },
+    "ancho": {
+      "type": "decimal"
+    },
+    "alto": {
+      "type": "decimal"
+    },
+    "largo": {
+      "type": "decimal"
+    },
+    "subcategorias": {
+      "collection": "subcategoria",
+      "via": "productos",
+      "dominant": true
+    },
+    "diametro": {
+      "type": "decimal",
+      "required": false
+    },
+    "precio3": {
+      "type": "decimal"
+    },
+    "gramos3": {
+      "type": "decimal"
+    },
+    "ml": {
+      "type": "decimal"
+    },
+    "descuento": {
+      "type": "decimal",
+      "default": 0,
+      "max": 100,
+      "min": 0
+    }
+  }
+}

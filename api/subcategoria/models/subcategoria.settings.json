@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subcategorias",
+  "info": {
+    "name": "Subcategoría",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "miniatura": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "url": {
+      "type": "uid",
+      "targetField": "titulo",
+      "required": true
+    },
+    "productos": {
+      "via": "subcategorias",
+      "collection": "producto"
+    },
+    "categoria": {
+      "via": "subcategorias",
+      "model": "categoria"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+---
+application:
+  name: "jabonarte-servidor"
+  project: "adminjabonarte"
+  organization: "QoveryCommunity"
+  storage:
+  - name: "images"
+    size: "10"
+    type: "ssd"
+    mount_point: "/mnt/images"
+routers:
+- name: "main-jabonarte-servidor"
+  routes:
+  - application_name: "jabonarte-servidor"
+    paths:
+    - "/*"
