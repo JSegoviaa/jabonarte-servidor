@@ -18,17 +18,14 @@ module.exports = {
         <div>
             <h1> ${name} se ha puesto en contacto</h1>
             <h3>Mensaje:</h3>
-           
-            <h4>${message}</h4>
-            <h3>Responder a:</h3> 
          
-            <h4>${replyTo}</h4>
-       
             <h3>Ciudad o estado:</h3> 
             <h4>${city}</h4>
             
             <h3>Tienda:</h3> 
             <h4>${tienda}</h4>
+
+            <h4>${replyTo}</h4>
         </div>
         `
           : `
